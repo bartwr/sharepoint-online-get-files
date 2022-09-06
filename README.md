@@ -1,5 +1,12 @@
+## Install dependencies
 
-`npm start`
+    npm install
+
+## Start app
+
+    npm start
+
+## See results
 
 Go to:
 
