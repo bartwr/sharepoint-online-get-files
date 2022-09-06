@@ -1,0 +1,21 @@
+{
+  "name": "sharepoint-online-tests",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sp-auth": "^3.0.7",
+    "nodemon": "^2.0.19",
+    "request-promise": "^4.2.6"
+  },
+  "dependencies": {
+    "sp-download": "^2.0.0"
+  }
+}
