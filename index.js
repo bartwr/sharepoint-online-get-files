@@ -10,18 +10,19 @@ const server = http.createServer(function(request, response) {
   spauth.getAuth(url, {          
     username: username,
     password: password  
-  })  
-  .then(function(options){  
+  })
+  .then(function(options){
     // Headers  
     var headers = options.headers;
     headers['Accept'] = 'application/json;odata=verbose';
     requestprom.get({  
       // This works:
-      url: url+"/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')",
+      // url: url+"/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')",
       // This doesn't:
-      // url: url+"/_api/web/GetFolderByServerRelativeUrl('/DataSheet')",
-      headers: headers,  
-      json: true  
+      // https://ammegagroup.sharepoint.com/sites/DatasheetPOC/_api/web/GetFolderByServerRelativeUrl('DataSheet')
+      url: url+"/sites/DatasheetPOC/_api/web/GetFolderByServerRelativeUrl('DataSheet')",
+      headers: headers,
+      json: true
     }).then(function(listresponse){
       console.log('listresponse', listresponse)
       return;
@@ -44,4 +45,4 @@ const server = http.createServer(function(request, response) {
 });
 
 var port = process.env.PORT || 1337;
-server.listen(port); 
+server.listen(port);
