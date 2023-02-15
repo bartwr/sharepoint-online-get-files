@@ -20,7 +20,9 @@ const server = http.createServer(function(request, response) {
       // url: url+"/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')",
       // This doesn't:
       // https://ammegagroup.sharepoint.com/sites/DatasheetPOC/_api/web/GetFolderByServerRelativeUrl('DataSheet')
-      url: url+"/sites/DatasheetPOC/_api/web/GetFolderByServerRelativeUrl('DataSheet')",
+      // url: url+"/sites/Datasheet_POC/_api/web/GetFolderByServerRelativeUrl('PDF')",
+      url: url+"/sites/DatasheetDev/_api/web/getfolderbyserverrelativeurl('PDF')",
+      // url: url+"/sites/Datasheets/_api/web/getfolderbyserverrelativeurl('PDF')",
       headers: headers,
       json: true
     }).then(function(listresponse){
@@ -28,7 +30,7 @@ const server = http.createServer(function(request, response) {
       return;
 
       // Later we will loop items and such ->
-      var items = listresponse.d.results;
+      var items = listresponse.d.Files;
       var responseJSON = [];
       // process  
       items.forEach(function(item) {  
